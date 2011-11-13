@@ -8,11 +8,6 @@ gem 'rails', '3.1.1'
 gem 'pg'
 gem 'nokogiri'
 
-group :production do 
-  gem 'therubyracer-heroku'
-end
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
