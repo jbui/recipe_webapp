@@ -126,7 +126,7 @@ class Recipe < ActiveRecord::Base
     end 
 
     def self.check_url(url)
-      return url =~ /allrecipes.com\/Recipe\/.+/
+      return url =~ /allrecipes.com\/[rR]ecipe\/.+/
     end
 
   end
