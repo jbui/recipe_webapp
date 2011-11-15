@@ -78,7 +78,9 @@ class Recipe < ActiveRecord::Base
       @image_location = @url.sub '/views/', '/photo/'
       @image_content = Nokogiri::HTML(open(@image_location))
       image = @image_content.at_css('#recipe_full_photo img')
-      image = 'http://www.epicurious.com' + image['src']
+      if not image.nil?
+        image = 'http://www.epicurious.com' + image['src']
+      end
       return image
       # small image
       # return @content.at_css('.photo')['src']
