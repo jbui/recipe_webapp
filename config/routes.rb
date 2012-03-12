@@ -2,8 +2,10 @@ Webapp::Application.routes.draw do
 
   match "signup" => "users#new"
   resources :users
+  resources :sessions
   # index, show, new, create, edit, update, and destroy
   resources :recipes, :only => [:index, :show, :new, :create] 
+  root :to => 'home#index'
   # get "recipes/new"
 
   # get "recipes/create"
