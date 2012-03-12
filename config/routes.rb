@@ -1,5 +1,7 @@
 Webapp::Application.routes.draw do
-  
+
+  match "signup" => "users#new"
+  resources :users
   # index, show, new, create, edit, update, and destroy
   resources :recipes, :only => [:index, :show, :new, :create] 
   # get "recipes/new"

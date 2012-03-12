@@ -8,6 +8,8 @@ class Recipe < ActiveRecord::Base
 
     attr_accessor :name, :url, :image_url, :ingredients, :directions
 
+    # scrape_ingredients returns an array
+    # scrape_directions returns an array
     def initialize(url)
       @url = url
       @content = Nokogiri::HTML(open(url))

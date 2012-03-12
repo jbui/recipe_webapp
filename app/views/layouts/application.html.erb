@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Webapp</title>
-    <% stylesheet_link_tag    "application" %>
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-    <%= stylesheet_link_tag    "recipes" %>
-    <%= javascript_include_tag "application" %>
+    <title>Noms</title>
+    <%  stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "bootstrap" %>
+    <% javascript_include_tag "application" %>
+    <%= javascript_include_tag "bootstrap.min" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+
+          <a class="brand" href="#">
+            Nomnomnom
+          </a>
+
+          <ul class="nav pull-right">
+            <li><a href="#">Current User</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <%= yield %>
     </div>
+
   </body>
 </html>

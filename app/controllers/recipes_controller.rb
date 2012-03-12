@@ -7,9 +7,9 @@ class RecipesController < ApplicationController
     respond_with(@recipes)
   end
 
-  def new
-    @recipe = Recipe.new
-  end
+  # def new
+  #   @recipe = Recipe.new
+  # end
 
   def create
     @recipe = Recipe.new(params[:recipe])
@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
     if @recipe.nil?
       render :action => "index"
     end
-    respond_with(@recipe)
+    # respond_with(@recipe)
 
   end
 
