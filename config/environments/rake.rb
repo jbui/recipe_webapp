@@ -1,1 +1,6 @@
-config.active_support.deprecation = :notify
+Webapp::Application.configure do
+
+  config.active_support.deprecation = :notify
+
+end
+
