@@ -3,19 +3,6 @@
 
 <%= form_for(@recipe) do |f| %>
 
-  <% if false %>
-  <% if @post.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <% end %>
-
     <%= f.label :url %>
   <div class="input">
     <%= f.text_field :url %>

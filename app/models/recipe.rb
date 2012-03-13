@@ -3,6 +3,8 @@ class Recipe < ActiveRecord::Base
   attr_accessible :url
   attr_protected :name, :image_url, :ingredients, :directions
 
+  has_and_belongs_to_many :users
+
   # Extend all site Parsers from this!
   class Parser
 

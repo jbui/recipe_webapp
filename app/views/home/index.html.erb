@@ -1,9 +1,56 @@
-<div class="hero-unit">
-  <h1>Nomnomnom your recipes!</h1>
-  <p>An awesome indexer for all your noms.</p>
-  <p>
-    <a class="btn btn-primary btn-large" href="/signup">
-      Signup Now!
-    </a>
-  </p>
+<% unless @myrecipes.empty? %>
+
+<div class="row-fluid">
+  <div class="span12">
+
+    <div class="row-fluid">
+      <div class="span4">
+
+          <ul class="nav nav-list">
+
+            <li class="active recipe_click recipe_title_0" style="cursor:pointer">
+              <a><%= @myrecipes[0].name %></a>
+            </li>
+          <% @myrecipes[1..-1].each_with_index do |recipe, i| %> 
+            <li class="recipe_click recipe_title_<%= i+1 %>" style="cursor:pointer">
+              <a><%=  recipe.name %></a>
+            </li>
+          <% end %>
+        </ul>
+        <br>
+        <%= form_for(@recipe, :html => { :class => "form-inline"}) do |f| %>
+          <%= f.text_field :url, :placeholder => "Recipe URL", :class => "span2" %>
+          <%= f.submit "Add Recipe", :class => "btn btn-small" %>
+        <% end %>
+
+      </div>
+
+      <div class="span8">
+        <span class="active recipe_0">
+          <%= render "recipes/recipe", :recipe => @myrecipes.first %>
+          </span>
+
+        <% @myrecipes[1..-1].each_with_index do |recipe, i| %> 
+          <span class="recipe_<%= i+1 %> hide">
+            <%= render "recipes/recipe", :recipe => recipe %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<% else %>
+
+<div class="row">
+  <div class="span8 offset3">
+    <h1> Add a Recipe! </h1>
+    <br>
+    <%= form_for(@recipe, :html => { :class => "form-inline"}) do |f| %>
+      <%= f.text_field :url, :placeholder => "Recipe URL", :class => "span4" %>
+      <%= f.submit "Add Recipe", :class => "btn btn-medium" %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>

@@ -1,6 +1,9 @@
 Webapp::Application.routes.draw do
 
-  match "signup" => "users#new"
+   get "logout" => "sessions#destroy", :as => "logout"
+   # get "signup" => "users#new", :as => "signup"
+   # get "login" => "sessions#new", :as => "login"
+
   resources :users
   resources :sessions
   # index, show, new, create, edit, update, and destroy

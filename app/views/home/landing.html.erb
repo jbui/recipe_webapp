@@ -1,0 +1,33 @@
+<div class="hero-unit">
+  <h1>Nomnomnom your recipes!</h1>
+  <p>An awesome indexer for all your noms.</p>
+
+    <div class="row">
+      <div class="span5">
+        <h3>Sign up</h2>
+          <%= form_for @user do |f| %>
+            <%= f.text_field :username, :placeholder => "Username" %>
+            <%= f.password_field :password, :placeholder => "Password" %>
+            <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+            <br>
+            <%= submit_tag "Signup for noms!", :class => "btn btn-warning" %>
+          <% end %>
+        <!-- <a class="btn btn-primary" href="/signup"> -->
+          <!-- Signup Now! -->
+        <!-- </a> -->
+      </div>
+
+      <div class="span5">
+        Already have an account?
+        <h3>Sign In</h2>
+        <%= form_tag sessions_path do %>
+          <%= text_field_tag :username, nil, :placeholder => "Username" %>
+          <%= password_field_tag :password, nil, :placeholder => "Password" %>
+          <br>
+          <%= submit_tag "Login", :class => "btn btn-primary" %>
+        <% end %>
+      </div>
+
+    </div>
+
+</div>
