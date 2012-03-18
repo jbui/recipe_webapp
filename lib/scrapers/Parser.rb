@@ -6,7 +6,7 @@ class Parser
   # scrape_ingredients returns an array
   # scrape_directions returns an array
   def initialize(url)
-    # @url = url
+    @url = url
     @content = Nokogiri::HTML(open(url))
     @content = content_mod
 
@@ -65,7 +65,6 @@ end
 #   def scrape_directions
 #   end 
   
-#   def self.check_url(url)
-#     return url =~ //
+#   def self.check_url
 #   end  
 # end

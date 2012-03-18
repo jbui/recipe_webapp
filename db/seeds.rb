@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+kevin = User.create!(:username => "kevin", :password => "a")
+james = User.create!(:username => "james", :password => "a")
+
+url = "http://allrecipes.com/recipe/cranberry-hootycreeks/"
+recipe = Recipe.parse_url_and_find_or_create(url)
+kevin.recipes << recipe
+james.recipes << recipe
+
+
+url = "http://allrecipes.com/recipe/best-big-fat-chewy-chocolate-chip-cookie/detail.aspx"
+recipe = Recipe.parse_url_and_find_or_create(url)
+kevin.recipes << recipe
+
+url = "http://allrecipes.com/recipe/white-chocolate-and-cranberry-cookies/"
+recipe = Recipe.parse_url_and_find_or_create(url)
+james.recipes << recipe
