@@ -28,7 +28,7 @@ class Allrecipes < Parser
 
   def self.check_url
     # http://allrecipes.com/Recipe/Carrabbas-Chicken-Marsala/Detail.aspx?src=rotd
-    "(allrecipes.com)\/[rR]ecipe\/(.+)\/?(?:.+\/?)"
+    /(allrecipes.com)\/[rR]ecipe\/(.+)\/?(?:.+\/?)/
   end
 
 end

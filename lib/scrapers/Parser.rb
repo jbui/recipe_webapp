@@ -21,6 +21,7 @@ class Parser
                 :ingredients => scrape_ingredients.map{|x| x.gsub("\t", " ")}.join("\t"),
                 :directions => scrape_directions.map{|x| x.gsub("\t", " ")}.join("\t")
                }
+    # raise @content.to_s.to_yaml
   end
 
   def scrape_name

@@ -33,7 +33,7 @@ class Epicurious < Parser
   def self.check_url
     # http://www.epicurious.com/articlesguides/bestof/toprecipes/bestburgerrecipes/recipes/food/views/Grilled-Turkey-Burgers-with-Cheddar-and-Smoky-Aioli-354289
     # http://www.epicurious.com/recipes/food/views/-em-Gourmet-Live-em-s-First-Birthday-Cake-367789
-    "(epicurious.com)\/(?:.*\/)?recipes\/food\/views\/(.+)\/?"
+    /(epicurious.com)\/(?:.*\/)?recipes\/food\/views\/(.+)\/?/
   end
 
 end 

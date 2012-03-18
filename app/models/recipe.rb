@@ -18,8 +18,9 @@ class Recipe < ActiveRecord::Base
     require 'Parser'
     require 'Epicurious'
     require 'Allrecipes'
+    require 'Joythebaker'
 
-    parsers = %w[Epicurious Allrecipes]
+    parsers = %w[Epicurious Allrecipes Joythebaker]
     recipe = nil
 
     # Iterates through all parsers in array and creates new objects out of
