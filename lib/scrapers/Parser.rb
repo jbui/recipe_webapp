@@ -1,18 +1,26 @@
 class Parser
 
-  attr_accessor :name, :url, :image_url, :ingredients, :directions
+  # attr_accessor :name, :url, :image_url, :ingredients, :directions
+  attr_accessor :content
 
   # scrape_ingredients returns an array
   # scrape_directions returns an array
   def initialize(url)
-    @url = url
+    # @url = url
     @content = Nokogiri::HTML(open(url))
     @content = content_mod
 
-    @name = scrape_name
-    @image_url = scrape_image_url
-    @ingredients = scrape_ingredients.map{|x| x.gsub("\t", " ")}
-    @directions = scrape_directions.map{|x| x.gsub("\t", " ")}  
+    # @name = scrape_name
+    # @image_url = scrape_image_url
+    # @ingredients = scrape_ingredients.map{|x| x.gsub("\t", " ")}
+    # @directions = scrape_directions.map{|x| x.gsub("\t", " ")}  
+
+    @content = {:url => url, 
+                :name => scrape_name,
+                :image_url => scrape_image_url,
+                :ingredients => scrape_ingredients.map{|x| x.gsub("\t", " ")}.join("\t"),
+                :directions => scrape_directions.map{|x| x.gsub("\t", " ")}.join("\t")
+               }
   end
 
   def scrape_name
@@ -31,7 +39,7 @@ class Parser
     raise NotImplementedException 
   end 
   
-  def self.check_url(url)
+  def self.check_url
     raise NotImplementedException 
   end
 

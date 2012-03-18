@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312175924) do
+ActiveRecord::Schema.define(:version => 20120318084721) do
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120312175924) do
     t.text     "directions"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "captured_key"
   end
 
   create_table "recipes_users", :force => true do |t|

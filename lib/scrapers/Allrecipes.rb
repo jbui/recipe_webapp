@@ -1,7 +1,5 @@
 class Allrecipes < Parser
 
-  # url = "http://allrecipes.com/Recipe/Carrabbas-Chicken-Marsala/Detail.aspx?src=rotd"
-
   def scrape_name
     return @content.at_css('.itemreviewed').content
   end
@@ -28,8 +26,9 @@ class Allrecipes < Parser
 
   end 
 
-  def self.check_url(url)
-    return url =~ /allrecipes.com\/[rR]ecipe\/.+/
+  def self.check_url
+    # http://allrecipes.com/Recipe/Carrabbas-Chicken-Marsala/Detail.aspx?src=rotd
+    "(allrecipes.com)\/[rR]ecipe\/(.+)\/?(?:.+\/?)"
   end
 
 end
